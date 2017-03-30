@@ -12,12 +12,12 @@ import {Popover} from "./Popover";
      style="display: block"
      role="popover">
     <div [hidden]="!closeOnMouseOutside" class="virtual-area"></div>
-    <div class="arrow"></div> 
+    <div class="arrow"></div>
     <h3 class="popover-title" [hidden]="!title">{{ title }}</h3>
     <div class="popover-content">
         <ng-content></ng-content>
         {{ content }}
-    </div> 
+    </div>
 </div>
 `,
     styles: [`
@@ -27,23 +27,23 @@ import {Popover} from "./Popover";
     position: absolute;
 }
 .popover.top .virtual-area {
-    bottom: -11px; 
+    bottom: -11px;
 }
 .popover.bottom .virtual-area {
-    top: -11px; 
+    top: -11px;
 }
 .popover.left .virtual-area {
-    right: -11px; 
+    right: -11px;
 }
 .popover.right .virtual-area {
-    left: -11px; 
+    left: -11px;
 }
 `]
 })
 export class PopoverContent implements AfterViewInit, OnDestroy {
 
     // -------------------------------------------------------------------------
-    // Inputs / Outputs 
+    // Inputs / Outputs
     // -------------------------------------------------------------------------
 
     // @Input()
@@ -83,7 +83,7 @@ export class PopoverContent implements AfterViewInit, OnDestroy {
     effectivePlacement: string;
 
     // -------------------------------------------------------------------------
-    // Anonymous 
+    // Anonymous
     // -------------------------------------------------------------------------
 
     /**
@@ -95,7 +95,7 @@ export class PopoverContent implements AfterViewInit, OnDestroy {
         if (element.contains(event.target) || this.popover.getElement().contains(event.target)) return;
         this.hide();
         this.onCloseFromOutside.emit(undefined);
-    };
+    }
 
     // -------------------------------------------------------------------------
     // Constructor
@@ -114,9 +114,9 @@ export class PopoverContent implements AfterViewInit, OnDestroy {
     listenMouseFunc: any;
     ngAfterViewInit(): void {
         if (this.closeOnClickOutside)
-            this.listenClickFunc = this.renderer.listenGlobal("document", "mousedown", (event: any) => this.onDocumentMouseDown(event));               
+            this.listenClickFunc = this.renderer.listenGlobal("document", "mousedown", (event: any) => this.onDocumentMouseDown(event));
         if (this.closeOnMouseOutside)
-            this.listenMouseFunc = this.renderer.listenGlobal("document", "mouseover", (event: any) => this.onDocumentMouseDown(event));  
+            this.listenMouseFunc = this.renderer.listenGlobal("document", "mouseover", (event: any) => this.onDocumentMouseDown(event));
 
         this.show();
         this.cdr.detectChanges();

@@ -23,16 +23,16 @@
     "angular2-popover"
   ],
   "peerDependencies": {
-    "@angular/core": "^2.0.0"
+    "@angular/core": "^4.0.0"
   },
   "devDependencies": {
-    "@angular/common": "^2.4.3",
-    "@angular/compiler": "^2.4.3",
-    "@angular/compiler-cli": "^2.4.3",
-    "@angular/core": "^2.4.3",
-    "@angular/forms": "^2.4.3",
-    "@angular/platform-browser": "^2.4.3",
-    "@angular/platform-browser-dynamic": "^2.4.3",
+    "@angular/common": "^4.0.1",
+    "@angular/compiler": "^4.0.1",
+    "@angular/compiler-cli": "^4.0.1",
+    "@angular/core": "^4.0.1",
+    "@angular/forms": "^4.0.1",
+    "@angular/platform-browser": "^4.0.1",
+    "@angular/platform-browser-dynamic": "^4.0.1",
 
     "@types/node": "^7.0.0",
     "bootstrap": "^3.3.7",
@@ -61,6 +61,9 @@
     "zone.js": "^0.7.6"
   },
   "scripts": {
-    "tsc": "ngc -p tsconfig-aot.json"
+    "tsc": "ngc -p tsconfig-aot.json",
+    "clean": "gulp clean",
+    "compile": "gulp compile",
+    "test": "gulp tests"
   }
 }
